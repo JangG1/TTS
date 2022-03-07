@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <audio controls>
+    <source src="http://localhost:7777/tts" type="audio/ogg">
+    </audio>
+    <button type="button" value="page move" onclick="download()">다운로드</button>
+    <button type="button" onclick="play('http://localhost:7777/tts')">재생</button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    
+    function play(sound) {
+        if (sound) {
+    var audio = new Audio(sound);
+        audio.play();}
+    }
+    function download() {
+        axios({
+                url: 'http://localhost:7777/tts',
+                method: 'GET',
+                responseType: 'arraybuffer', 
+            }).then((response) => {
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', 'file.mp3'); 
+                document.body.appendChild(link);
+                link.click();
+            });
+        }
+</script>
+</html>

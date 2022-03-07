@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    meta(caharset="utf-8")
+  body
+    form(action="login_check" method="get")
+      p
+        |아이디
+        input(type="text" name="id")
+        
+      input(type="submit" value="로그인")
+    
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+    script(src="/views/axios.js")

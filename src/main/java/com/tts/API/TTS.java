@@ -34,22 +34,6 @@ import org.springframework.web.bind.annotation.RestController;
 //@CrossOrigin(origins = "http://localhost:7777/tts.mp3")
 public class TTS {
 	
-//	@PostMapping("/test")
-//	public ArrayList<HashMap<String, Object>> test(@RequestBody HashMap<String, Object> requestJsonHashMap) throws Exception{
-//
-//		//response Data
-//		ArrayList<HashMap<String, Object>> rtnArray = new ArrayList<HashMap<String, Object>>();
-//		HashMap<String, Object> rtnMap = new HashMap<String, Object>();
-//
-//		rtnMap.put("text", requestJsonHashMap.get("data"));    
-//		rtnArray.add(rtnMap);
-//		rtnMap.get("text");
-//		//System.out.println(rtnMap.get("text"));
-//		String tts = (String) rtnMap.get("text");
-//		//System.out.println(tts);
-//		return rtnArray; 
-//	}	
-	
 	@PostMapping("/server")
 	//@CrossOrigin(origins = "http://localhost:8085")
     public  void getTTShelper(@RequestBody HashMap<String, Object> requestJsonHashMap ) {

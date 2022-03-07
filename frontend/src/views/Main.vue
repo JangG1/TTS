@@ -125,7 +125,9 @@
 </div>
 </template>
 
-<script type="text/javascript"> </script><script>
+<script type="text/javascript"> </script>
+<script>
+
 import axios from 'axios'
 
 export default {
